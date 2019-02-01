@@ -108,13 +108,13 @@ function getRoleResources(namespace: string): KubernetesResource[] {
       },
       roleRef: {
         kind: "Role",
-        name: "tiller",
+        name: serviceAccountName,
         apiGroup: "rbac.authorization.k8s.io",
       },
       subjects: [
         {
           kind: "ServiceAccount",
-          name: "tiller",
+          name: serviceAccountName,
           namespace,
         },
       ],
